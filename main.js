@@ -210,5 +210,5 @@ const generateHoroscope = (dd, mm) => {
     let message = generateMessage();
     return `Your starsign is ${starsign} And your horoscope for today and tomorrow is: ${message}`;
 }
-console.log(generateHoroscope(19, 07));
+console.log(generateHoroscope(dd, mm));
 //console.log(calculateStarsign(299, 22));

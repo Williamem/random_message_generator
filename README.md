@@ -1,4 +1,4 @@
-# Project Name
+# Random Message Generator
 > A Javascript program that generates random horoscopes
 
 
@@ -6,8 +6,6 @@
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
-* [Screenshots](#screenshots)
-* [Setup](#setup)
 * [Usage](#usage)
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
@@ -17,7 +15,7 @@
 
 
 ## General Information
-- A prgram to generate random horoscope messages using JavaScript
+- A program to generate random horoscope messages using JavaScript
 - Created as practice in using JavaScript
 - Part of the "Full stack web development" course on CodeCademy
 <!-- You don't have to answer all the questions - just the ones relevant to your project. -->
@@ -26,58 +24,37 @@
 ## Technologies Used
 - JavaScript
 
-<!--
 ## Features
 List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
-
-
-## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
-
-
-## Setup
-What are the project requirements/dependencies? Where are they listed? A requirements.txt or a Pipfile.lock file perhaps? Where is it located?
-
-Proceed to describe how to install / setup one's local environment / get started with the project.
+- Calculates your starsign based on date entered.
+- Gives you a random horoscope for today and tomorrow.
 
 
 ## Usage
-How does one go about using it?
-Provide various use cases and code examples here.
-
-`write-your-code-here`
+- Run on desktop through Node.js or in browser.
+- Enter your birthday to get a personalized horoscope for today and tomorrow.
+- dd is day using two numbers. mm is month using two numbers (January 15th would be 15, 01).
+`console.log(generateHoroscope(dd, mm))`
 -->
 
 ## Project Status
-Project is: _in progress_
+Project is: _finished_
 
-<!--
 ## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
-
-Room for improvement:
-- Improvement to be done 1
-- Improvement to be done 2
+Messages could be edited using variables to give a more personalized horoscope. When dates are entered incorrectly 'undefined' is returned with the error-message
 
 To do:
-- Feature to be added 1
-- Feature to be added 2
+- no more work will be done on this project
 
 
 ## Acknowledgements
 Give credit here.
-The predictions were borrowed from https://www.elle.com/horoscopes/daily/a107/aquarius-daily-horoscope/
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
+The predictions were borrowed from [Elle](https://www.elle.com/horoscopes/daily/a107/aquarius-daily-horoscope/)
+- This project was based on the random message generator at [CodeCademy](https://www.codecademy.com/).
 -->
 
 ## Contact
-Created by [@williamem](william.emanuelsson@gmail.com) - feel free to contact me!
+Created by @williamem. feel free to contact me!
 
 
 <!-- Optional -->
