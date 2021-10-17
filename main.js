@@ -78,7 +78,6 @@ const messageArrOne = [
     `When the Sun in Libra throws down with stormy Pluto on ${tomorrow}, you could spot an obstacle on the brink of going all in on a relationship. Are there unresolved issues you need to deal with before you take the next step? Small stuff like divvying up chores around the house and larger matters like your financial styles are all up for discussion. Don’t put this off. You’ll be glad you got it out of the way.`,
   ];
 
-console.log(tomorrow);
 //factory to add the months and amout of days into months object
 const month = (days) => {
   return {
@@ -100,10 +99,11 @@ const months = {
   November: month(30),
   December: month(31),
 };
-console.log(months);
 
 //calculates your starsign based on information given
 const calculateStarsign = (dd, mm) => {
+    //declare the starsign variable for use later
+    let starsign = 'starsign has not changed';
   //checks that the input is in the correct format (dd, mm) with exactly two numbers for each
   if (
     dd.length > 2 ||
@@ -111,11 +111,14 @@ const calculateStarsign = (dd, mm) => {
     mm.length < 2 ||
     dd.length < 2 ||
     typeof mm != "number" ||
-    typeof dd != "number"
+    typeof dd != "number" ||
+    mm > 12 ||
+    mm < 0
   ) {
     console.log(
       'Incorrect date format. Dates should be written as "dd, mm", e.g. January 15th would be "15, 01"'
     );
+    return;
   }
   //switch statement to change the number of the month to name for comparison with months object
   switch (mm) {
@@ -160,14 +163,40 @@ const calculateStarsign = (dd, mm) => {
         "If this message can be seen it means that an incorrect month made it past the if statement."
       );
   }
-
-  console.log('months[mm].days ' + months[mm].days)
   if (dd > months[mm].days || dd < 0) {
       console.log(`${mm} does not have ${dd} days`)
+      return;
   }
-  console.log(mm, dd);
-
-console.log(months[mm].days)
+  //do the actual calculation to find out starsign
+  if((mm === 'March' && dd > 20) || (mm === 'April' && dd < 20)) {
+    starsign = 'Aries';
+  } else if ((mm === 'April' && dd > 19) || (mm === 'May' && dd < 21)) {
+    starsign = 'Taurus';
+} else if ((mm === 'May' && dd > 20) || (mm === 'June' && dd < 21)) {
+    starsign = 'Gemini';
+} else if ((mm === 'June' && dd > 20) || (mm === 'July' && dd < 23)) {
+    starsign = 'Cancer';
+} else if ((mm === 'July' && dd > 22) || (mm === 'August' && dd < 23)) {
+    starsign = 'Leo';
+} else if ((mm === 'August' && dd > 22) || (mm === 'September' && dd < 23)) {
+    starsign = 'Virgo';
+} else if ((mm === 'September' && dd > 22) || (mm === 'October' && dd < 23)) {
+    starsign = 'Libra';
+} else if ((mm === 'October' && dd > 22) || (mm === 'November' && dd < 22)) {
+    starsign = 'Scorpio';
+} else if ((mm === 'November' && dd > 21) || (mm === 'December' && dd < 22)) {
+    starsign = 'Sagittarius';
+} else if ((mm === 'December' && dd > 21) || (mm === 'January' && dd < 20)) {
+    starsign = 'Capricorn';
+} else if ((mm === 'January' && dd > 19) || (mm === 'February' && dd < 19)) {
+    starsign = 'Aquarius';
+} else if ((mm === 'February' && dd > 18) || (mm === 'March' && dd < 21)) {
+    starsign = 'Pisces';
+} else {
+    starsign = 'The date entered is missing from the list'
+}
+  return starsign;
 };
-calculateStarsign(122, 10);
 
+
+console.log(calculateStarsign(299, 22));
