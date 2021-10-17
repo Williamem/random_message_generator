@@ -198,5 +198,11 @@ const calculateStarsign = (dd, mm) => {
   return starsign;
 };
 
-
-console.log(calculateStarsign(299, 22));
+const generateMessage = () => {
+    const randomIndex = arr => Math.floor(Math.random() * arr.length);
+    let messageOne = messageArrOne[randomIndex(messageArrOne)];
+    let messageTwo = messageArrTwo[randomIndex(messageArrTwo)];
+    return messageOne + ' ' + messageTwo;
+}
+console.log(generateMessage());
+//console.log(calculateStarsign(299, 22));
