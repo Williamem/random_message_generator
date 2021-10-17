@@ -1,5 +1,3 @@
-
-
 let today;
 let tomorrow;
 //calculate what day it is today
@@ -89,18 +87,18 @@ const month = (days) => {
 };
 //object containing the months and maximum number of days in each month
 const months = {
-  jan: month(31),
-  feb: month(29),
-  mar: month(31),
-  apr: month(30),
-  may: month(31),
-  jun: month(30),
-  jul: month(31),
-  aug: month(31),
-  sep: month(30),
-  oct: month(31),
-  nov: month(30),
-  dec: month(31),
+  January: month(31),
+  February: month(29),
+  March: month(31),
+  April: month(30),
+  May: month(31),
+  June: month(30),
+  July: month(31),
+  August: month(31),
+  September: month(30),
+  October: month(31),
+  November: month(30),
+  December: month(31),
 };
 console.log(months);
 
@@ -122,46 +120,54 @@ const calculateStarsign = (dd, mm) => {
   //switch statement to change the number of the month to name for comparison with months object
   switch (mm) {
     case 01:
-      mm = "jan";
+      mm = "January";
       break;
     case 02:
-      mm = "feb";
+      mm = "February";
       break;
     case 03:
-      mm = "mar";
+      mm = "March";
       break;
     case 04:
-      mm = "apr";
+      mm = "April";
       break;
     case 05:
-      mm = "may";
+      mm = "May";
       break;
     case 06:
-      mm = "jun";
+      mm = "June";
       break;
     case 07:
-      mm = "jul";
+      mm = "July";
       break;
     case 08:
-      mm = "aug";
+      mm = "August";
       break;
     case 09:
-      mm = "sep";
+      mm = "September";
       break;
     case 10:
-      mm = "oct";
+      mm = "October";
       break;
     case 11:
-      mm = "nov";
+      mm = "November";
       break;
     case 12:
-      mm = "dec";
+      mm = "December";
       break;
     default:
       console.log(
         "If this message can be seen it means that an incorrect month made it past the if statement."
       );
   }
+
+  console.log('months[mm].days ' + months[mm].days)
+  if (dd > months[mm].days || dd < 0) {
+      console.log(`${mm} does not have ${dd} days`)
+  }
   console.log(mm, dd);
+
+console.log(months[mm].days)
 };
-calculateStarsign(12, 10);
+calculateStarsign(122, 10);
+
