@@ -204,5 +204,11 @@ const generateMessage = () => {
     let messageTwo = messageArrTwo[randomIndex(messageArrTwo)];
     return messageOne + ' ' + messageTwo;
 }
-console.log(generateMessage());
+
+const generateHoroscope = (dd, mm) => {
+    let starsign = calculateStarsign(dd, mm);
+    let message = generateMessage();
+    return `Your starsign is ${starsign} And your horoscope for today and tomorrow is: ${message}`;
+}
+console.log(generateHoroscope(19, 07));
 //console.log(calculateStarsign(299, 22));
